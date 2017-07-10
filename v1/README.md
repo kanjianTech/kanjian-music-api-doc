@@ -113,19 +113,19 @@
         * 参数 公共参数
         * 返回值
 
-            | 字段           | 类型   | 必填 | 描述                      |
+            | 字段           | 类型   | 必填 | 描述                   |
             | -------------- | ------ | ---- | ---------------------- |
-            | page           | Int    | 是   | 当前页数                 |
-            | pre_page       | Int    | 是   | 上一页                   |
-            | next_page      | Int    | 是   | 下一页                   |
-            | count          | Int    | 是   | 当前页面条数              |
-            | genres         | Array  | 是   | 风格列表                 |
+            | page           | Int    | 是   | 当前页数               |
+            | pre_page       | Int    | 是   | 上一页                 |
+            | next_page      | Int    | 是   | 下一页                 |
+            | count          | Int    | 是   | 当前页面条数           |
+            | genres         | Array  | 是   | 风格列表               |
 
-            | 字段           | 类型   | 必填 | 描述                      |
+            | 字段           | 类型   | 必填 | 描述                   |
             | -------------- | ------ | ---- | ---------------------- |
-            | id       | Int    | 是   | 风格ID                  |
-            | genre_name     | String | 是   | 风格名称                 |
-            | genre_desc     | String | 是   | 风格描述                 |
+            | id             | Int    | 是   | 风格ID                 |
+            | genre_name     | String | 是   | 风格名称               |
+            | genre_desc     | String | 是   | 风格描述               |
 
         * 示例
         
@@ -162,20 +162,20 @@
         * 参数 公共参数 + genre_id
         * 返回值
 
-            | 字段           | 类型   | 必填 | 描述                      |
+            | 字段           | 类型   | 必填 | 描述                   |
             | -------------- | ------ | ---- | ---------------------- |
-            | page           | Int    | 是   | 当前页数                 |
-            | pre_page       | Int    | 是   | 上一页                   |
-            | next_page      | Int    | 是   | 下一页                   |
-            | count          | Int    | 是   | 当前页面条数              |
-            | albums         | Array  | 是   | 专辑列表                |
+            | page           | Int    | 是   | 当前页数               |
+            | pre_page       | Int    | 是   | 上一页                 |
+            | next_page      | Int    | 是   | 下一页                 |
+            | count          | Int    | 是   | 当前页面条数           |
+            | albums         | Array  | 是   | 专辑列表               |
 
-            | 字段           | 类型   | 必填 | 描述                      |
+            | 字段           | 类型   | 必填 | 描述                   |
             | -------------- | ------ | ---- | ---------------------- |
-            | id             | Int    | 是   | 专辑ID                  |
-            | album_name     | String | 是   | 专辑名称                 |
-            | album_desc     | String | 是   | 专辑描述                 |
-            | pic_url        | String | 是   | 专辑图                  |
+            | id             | Int    | 是   | 专辑ID                 |
+            | album_name     | String | 是   | 专辑名称               |
+            | album_desc     | String | 是   | 专辑描述               |
+            | pic_url        | String | 是   | 专辑图                 |
 
         * 示例
         
@@ -190,13 +190,13 @@
                         "id": 0,
                         "album_name": "how you love me",
                         "album_desc": "",
-                        "pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
                     },
                     {
                         "id": 1,
                         "album_name": "way to go",
                         "album_desc": "",
-                        "pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
                     },
                     ...
                 ]
@@ -218,14 +218,21 @@
             | tracks         | Array  | 是   | 单曲列表               |
 
             | 字段           | 类型   | 必填 | 描述                   |
-            | -------------- | ------ | ---- | -------------------- |
+            | -------------- | ------ | ---- | ---------------------- |
             | id             | Int    | 是   | 单曲ID                 |
             | track_name     | String | 是   | 单曲名称               |
             | duration       | String | 是   | 时长/秒                |
             | filesize       | String | 是   | 文件大小/KB            |
-            | album_id       | Int    | 是   | 专辑ID                |
+            | album_id       | Int    | 是   | 专辑ID                 |
             | album_name     | String | 是   | 专辑名称               |
             | album_pic_url  | String | 是   | 专辑图片               |
+            | artists        | Array  | 是   | 艺人列表               |
+
+            | 字段           | 类型   | 必填 | 描述                   |
+            | -------------- | ------ | ---- | ---------------------- |
+            | artist_id      | Int    | 是   | 音乐人ID               |
+            | artist_name    | String | 是   | 音乐人名称             |
+            | artist_pic_url | String | 是   | 音乐人图片             |
 
         * 示例
         
@@ -243,7 +250,14 @@
                         "filesize": 3096,
                         "album_id": 1,
                         "album_name": "way to go",
-                        "album_pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "album_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                        "artists": [
+                            {
+                                "artist_id": 1,
+                                "artist_name": "Gravity Alterstra",
+                                "artist_pic_url": "http://a.com/default/artist.jpg"
+                            }
+                        ]
                     },
                     {
                         "id": 1,
@@ -252,7 +266,14 @@
                         "filesize": 3096,
                         "album_id": 1,
                         "album_name": "way to go",
-                        "album_pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "album_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                        "artists": [
+                            {
+                                "artist_id": 95067,
+                                "artist_name": "Gravity Alterstra",
+                                "artist_pic_url": "http://a.com/default/artist.jpg"
+                            }
+                        ]
                     },
                     ...
                 ]
@@ -273,14 +294,14 @@
             | pre_page       | Int    | 是   | 上一页                 |
             | next_page      | Int    | 是   | 下一页                 |
             | count          | Int    | 是   | 当前页面条数           |
-            | artists        | Array  | 是   | 音乐人列表               |
+            | artists        | Array  | 是   | 音乐人列表             |
 
-            | 字段            | 类型   | 必填 | 描述                     |
-            | --------------  | ------ | ---- | ------------------------ |
-            | id              | Int    | 是   | 音乐人ID                 |
-            | artist_name     | String | 是   | 音乐人名称               |
-            | artist_desc     | String | 是   | 音乐人描述               |
-            | pic_url         | String | 是   | 音乐人图                 |
+            | 字段            | 类型   | 必填 | 描述                  |
+            | --------------  | ------ | ---- | --------------------- |
+            | id              | Int    | 是   | 音乐人ID              |
+            | artist_name     | String | 是   | 音乐人名称            |
+            | artist_desc     | String | 是   | 音乐人描述            |
+            | pic_url         | String | 是   | 音乐人图              |
 
         * 示例
             
@@ -295,19 +316,19 @@
                         "id": 0,
                         "artist_name": "jayz",
                         "artist_desc": "",
-                        "pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
                     },
                     {
                         "id": 1,
                         "artist_name": "ketty",
                         "artist_desc": "",
-                        "pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
                     },
                     {
                         "id": 2,
                         "artist_name": "justin bieber",
                         "artist_desc": "",
-                        "pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
                     },
                 ...
                 ]
@@ -326,14 +347,14 @@
             | pre_page       | Int    | 是   | 上一页                 |
             | next_page      | Int    | 是   | 下一页                 |
             | count          | Int    | 是   | 当前页面条数           |
-            | albums         | Array  | 是   | 专辑列表             |
+            | albums         | Array  | 是   | 专辑列表               |
 
             | 字段           | 类型   | 必填 | 描述                   |
             | -------------- | ------ | ---- | ---------------------- |
-            | id             | Int    | 是   | 专辑ID               |
-            | album_name     | String | 是   | 专辑名称             |
-            | album_desc     | String | 是   | 专辑描述             |
-            | pic_url        | String | 是   | 专辑图              |
+            | id             | Int    | 是   | 专辑ID                 |
+            | album_name     | String | 是   | 专辑名称               |
+            | album_desc     | String | 是   | 专辑描述               |
+            | pic_url        | String | 是   | 专辑图                 |
 
         * 示例
             
@@ -373,7 +394,7 @@
             | pre_page       | Int    | 是   | 上一页                 |
             | next_page      | Int    | 是   | 下一页                 |
             | count          | Int    | 是   | 当前页面条数           |
-            | tracks         | Array  | 是   | 专辑列表               |
+            | tracks         | Array  | 是   | 单曲列表               |
 
             | 字段           | 类型   | 必填 | 描述                   |
             | -------------- | ------ | ---- | ---------------------- |
@@ -381,9 +402,16 @@
             | track_name     | String | 是   | 单曲名称               |
             | duration       | String | 是   | 时长/秒                |
             | filesize       | String | 是   | 文件大小/KB            |
-            | album_id       | Int    | 是   | 专辑ID                |
+            | album_id       | Int    | 是   | 专辑ID                 |
             | album_name     | String | 是   | 专辑名称               |
             | album_pic_url  | String | 是   | 专辑图片               |
+            | artists        | Array  | 是   | 艺人列表               |
+
+            | 字段           | 类型   | 必填 | 描述                   |
+            | -------------- | ------ | ---- | ---------------------- |
+            | artist_id      | Int    | 是   | 音乐人ID               |
+            | artist_name    | String | 是   | 音乐人名称             |
+            | artist_pic_url | String | 是   | 音乐人图片             |
 
         * 示例
         
@@ -401,7 +429,14 @@
                         "filesize": 3096,
                         "album_id": 1,
                         "album_name": "way to go",
-                        "album_pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "album_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                        "artists": [
+                            {
+                                "artist_id": 1,
+                                "artist_name": "T",
+                                "artist_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                            }
+                        ]
                     },
                     {
                         "id": 1,
@@ -410,7 +445,14 @@
                         "filesize": 3096,
                         "album_id": 1,
                         "album_name": "way to go",
-                        "album_pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "album_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                        "artists": [
+                            {
+                                "artist_id": 1,
+                                "artist_name": "T",
+                                "artist_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                            }
+                        ]
                     },
                     ...
                 ]
@@ -425,8 +467,8 @@
         * 参数 公共参数 + album_id
         * 返回值
     
-            | 字段            | 类型   | 必填 | 描述                     |
-            | --------------  | ------ | ---- | ------------------------ |
+            | 字段            | 类型   | 必填 | 描述                   |
+            | --------------  | ------ | ---- | ---------------------- |
             | id              | Int    | 是   | 专辑ID                 |
             | album_name      | String | 是   | 专辑名称               |
             | album_desc      | String | 是   | 专辑描述               |
@@ -439,7 +481,7 @@
                 "id": 10,
                 "album_name": "how we take",
                 "album_desc": "lalalalla zzzzz",
-                "pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                "pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
             }
             ~~~~
 
@@ -455,7 +497,7 @@
             | pre_page       | Int    | 是   | 上一页                 |
             | next_page      | Int    | 是   | 下一页                 |
             | count          | Int    | 是   | 当前页面条数           |
-            | tracks         | Array  | 是   | 专辑列表               |
+            | tracks         | Array  | 是   | 单曲列表               |
         
             | 字段           | 类型   | 必填 | 描述                   |
             | -------------- | ------ | ---- | ---------------------- |
@@ -463,9 +505,16 @@
             | track_name     | String | 是   | 单曲名称               |
             | duration       | String | 是   | 时长/秒                |
             | filesize       | String | 是   | 文件大小/KB            |
-            | album_id       | Int    | 是   | 专辑ID                |
+            | album_id       | Int    | 是   | 专辑ID                 |
             | album_name     | String | 是   | 专辑名称               |
             | album_pic_url  | String | 是   | 专辑图片               |
+            | artists        | Array  | 是   | 艺人列表               |
+
+            | 字段           | 类型   | 必填 | 描述                   |
+            | -------------- | ------ | ---- | ---------------------- |
+            | artist_id      | Int    | 是   | 音乐人ID               |
+            | artist_name    | String | 是   | 音乐人名称             |
+            | artist_pic_url | String | 是   | 音乐人图片             |
 
         * 示例
         
@@ -483,7 +532,14 @@
                         "filesize": 3096,
                         "album_id": 1,
                         "album_name": "way to go",
-                        "album_pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "album_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                        "artists": [
+                            {
+                                "artist_id": 1,
+                                "artist_name": "TT",
+                                "artist_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                            }
+                        ]
                     },
                     {
                         "id": 1,
@@ -492,7 +548,14 @@
                         "filesize": 3096,
                         "album_id": 1,
                         "album_name": "way to go",
-                        "album_pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "album_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                        "artists": [
+                            {
+                                "artist_id": 1,
+                                "artist_name": "AA",
+                                "artist_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                            }
+                        ]
                     },
                     ...
                 ]
@@ -507,16 +570,23 @@
         * 参数 公共参数 + track_id
         * 返回值
     
-            | 字段            | 类型   | 必填 | 描述                     |
-            | --------------  | ------ | ---- | ------------------------ |
-            | id              | Int    | 是   | 单曲ID                 |
-            | track_name      | String | 是   | 单曲名称               |
-            | track_file_path | String | 是   | 单曲文件地址            |
-            | duration       | String | 是   | 时长/秒                |
-            | filesize       | String | 是   | 文件大小/KB            |
-            | album_id       | Int    | 是   | 专辑ID                |
-            | album_name     | String | 是   | 专辑名称               |
-            | album_pic_url  | String | 是   | 专辑图片               |
+            | 字段            | 类型   | 必填 | 描述                  |
+            | --------------  | ------ | ---- | --------------------- |
+            | id              | Int    | 是   | 单曲ID                |
+            | track_name      | String | 是   | 单曲名称              |
+            | track_file_path | String | 是   | 单曲文件地址          |
+            | duration        | String | 是   | 时长/秒               |
+            | filesize        | String | 是   | 文件大小/KB           |
+            | album_id        | Int    | 是   | 专辑ID                |
+            | album_name      | String | 是   | 专辑名称              |
+            | album_pic_url   | String | 是   | 专辑图片              |
+            | artists         | Array  | 是   | 艺人列表              |
+
+            | 字段            | 类型   | 必填 | 描述                  |
+            | --------------  | ------ | ---- | --------------------- |
+            | artist_id       | Int    | 是   | 音乐人ID              |
+            | artist_name     | String | 是   | 音乐人名称            |
+            | artist_pic_url  | String | 是   | 音乐人图片            |
 
         * 示例
         
@@ -529,7 +599,14 @@
                 "filesize": 3096,
                 "album_id": 1,
                 "album_name": "way to go",
-                "album_pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                "album_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                "artists": [
+                    {
+                        "artist_id": 1,
+                        "artist_name": "TT",
+                        "artist_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                    }
+                ]
             }
             ~~~~
 
@@ -539,9 +616,9 @@
         * HTTP METHOD GET
         * 参数 公共参数 + 
     
-            | 字段           | 类型   | 必填 | 描述                                            |
-            | -------------- | ------ | ---- | ----------------------------------------------- |
-            | keyword        | String | 是   | 关键词                                          |
+            | 字段           | 类型   | 必填 | 描述                   |
+            | -------------- | ------ | ---- | ---------------------- |
+            | keyword        | String | 是   | 关键词                 |
 
         * 返回值
 
@@ -558,7 +635,7 @@
             | id             | Int    | 是   | 音乐人ID               |
             | artist_name    | String | 是   | 音乐人名称             |
             | artist_desc    | String | 是   | 音乐人描述             |
-            | pic_url        | String | 是   | 音乐人图              |
+            | pic_url        | String | 是   | 音乐人图               |
 
         * 示例
     
@@ -573,13 +650,13 @@
                         "id": 0,
                         "artists_name": "赵大宝儿",
                         "artists_desc": "",
-                        "pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
                     },
                     {
                         "id": 1,
                         "artists_name": "北京希望无限文化传媒有限公司",
                         "artists_desc": "",
-                        "pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
                     },
                     ...
                 ]
@@ -591,9 +668,9 @@
         * HTTP METHOD GET
         * 参数 公共参数 + 
     
-            | 字段           | 类型   | 必填 | 描述                                            |
-            | -------------- | ------ | ---- | ----------------------------------------------- |
-            | keyword        | String | 是   | 关键词                                          |
+            | 字段           | 类型   | 必填 | 描述                   |
+            | -------------- | ------ | ---- | ---------------------- |
+            | keyword        | String | 是   | 关键词                 |
 
         * 返回值
 
@@ -603,14 +680,14 @@
             | pre_page       | Int    | 是   | 上一页                 |
             | next_page      | Int    | 是   | 下一页                 |
             | count          | Int    | 是   | 当前页面条数           |
-            | albums         | Array  | 是   | 专辑列表              |
+            | albums         | Array  | 是   | 专辑列表               |
 
             | 字段           | 类型   | 必填 | 描述                   |
             | -------------- | ------ | ---- | ---------------------- |
-            | id             | Int    | 是   | 专辑ID               |
-            | album_name     | String | 是   | 专辑名称             |
-            | album_desc     | String | 是   | 专辑描述             |
-            | pic_url        | String | 是   | 专辑图              |
+            | id             | Int    | 是   | 专辑ID                 |
+            | album_name     | String | 是   | 专辑名称               |
+            | album_desc     | String | 是   | 专辑描述               |
+            | pic_url        | String | 是   | 专辑图                 |
 
         * 示例
     
@@ -625,13 +702,13 @@
                         "id": 0,
                         "album_name": "赵大宝儿",
                         "album_desc": "",
-                        "pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
                     },
                     {
                         "id": 1,
                         "album_name": "北京希望无限文化传媒有限公司",
                         "album_desc": "",
-                        "pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
                     },
                     ...
                 ]
@@ -643,29 +720,36 @@
         * HTTP METHOD GET
         * 参数 公共参数 + 
     
-            | 字段           | 类型   | 必填 | 描述                                            |
-            | -------------- | ------ | ---- | ----------------------------------------------- |
-            | keyword        | String | 是   | 关键词                                          |
+            | 字段           | 类型   | 必填 | 描述                  |
+            | -------------- | ------ | ---- | --------------------- |
+            | keyword        | String | 是   | 关键词                |
 
         * 返回值
 
-            | 字段           | 类型   | 必填 | 描述                   |
-            | -------------- | ------ | ---- | ---------------------- |
-            | page           | Int    | 是   | 当前页数               |
-            | pre_page       | Int    | 是   | 上一页                 |
-            | next_page      | Int    | 是   | 下一页                 |
-            | count          | Int    | 是   | 当前页面条数           |
+            | 字段           | 类型   | 必填 | 描述                  |
+            | -------------- | ------ | ---- | --------------------- |
+            | page           | Int    | 是   | 当前页数              |
+            | pre_page       | Int    | 是   | 上一页                |
+            | next_page      | Int    | 是   | 下一页                |
+            | count          | Int    | 是   | 当前页面条数          |
             | tracks         | Array  | 是   | 单曲列表              |
 
-            | 字段           | 类型   | 必填 | 描述                   |
-            | -------------- | ------ | ---- | ---------------------- |
-            | id             | Int    | 是   | 单曲ID               |
-            | track_name     | String | 是   | 单曲名称             |
-            | duration       | String | 是   | 时长/秒                |
-            | filesize       | String | 是   | 文件大小/KB            |
+            | 字段           | 类型   | 必填 | 描述                  |
+            | -------------- | ------ | ---- | --------------------- |
+            | id             | Int    | 是   | 单曲ID                |
+            | track_name     | String | 是   | 单曲名称              |
+            | duration       | String | 是   | 时长/秒               |
+            | filesize       | String | 是   | 文件大小/KB           |
             | album_id       | Int    | 是   | 专辑ID                |
-            | album_name     | String | 是   | 专辑名称               |
-            | album_pic_url  | String | 是   | 专辑图片               |
+            | album_name     | String | 是   | 专辑名称              |
+            | album_pic_url  | String | 是   | 专辑图片              |
+            | artists        | Array  | 是   | 艺人列表              |
+
+            | 字段           | 类型   | 必填 | 描述                  |
+            | -------------- | ------ | ---- | --------------------- |
+            | artist_id      | Int    | 是   | 音乐人ID              |
+            | artist_name    | String | 是   | 音乐人名称            |
+            | artist_pic_url | String | 是   | 音乐人图片            |
 
         * 示例
     
@@ -683,7 +767,14 @@
                         "filesize": 3096,
                         "album_id": 1,
                         "album_name": "way to go",
-                        "album_pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "album_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                        "artists": [
+                            {
+                                "artist_id": 1,
+                                "artist_name": "周杰",
+                                "artist_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                            }
+                        ]
                     },
                     {
                         "id": 1,
@@ -692,7 +783,14 @@
                         "filesize": 3096,
                         "album_id": 1,
                         "album_name": "way to go",
-                        "album_pic_url": "image.kanjian.com/xxx/xxx.jpg",
+                        "album_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                        "artists": [
+                            {
+                                "artist_id": 1,
+                                "artist_name": "Jony J",
+                                "artist_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                            }
+                        ]
                     },
                     ...
                 ]
