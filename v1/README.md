@@ -126,6 +126,7 @@
             | id             | Int    | 是   | 风格ID                 |
             | genre_name     | String | 是   | 风格名称               |
             | genre_desc     | String | 是   | 风格描述               |
+            | pic_url        | String | 是   | 风格图                 |
 
         * 示例
         
@@ -139,17 +140,20 @@
                     {
                         "id": 0,
                         "genre_name": "全部",
-                        "genre_desc": ""
+                        "genre_desc": "",
+                        "pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
                     },
                     {
                         "id": 1,
                         "genre_name": "流行",
-                        "genre_desc": ""
+                        "genre_desc": "",
+                        "pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
                     },
                     {
                         "id": 2,
                         "genre_name": "摇滚",
-                        "genre_desc": ""
+                        "genre_desc": "",
+                        "pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
                     },
                     ...
                 ]
