@@ -574,17 +574,18 @@
         * 参数 公共参数 + track_id
         * 返回值
     
-            | 字段            | 类型   | 必填 | 描述                  |
-            | --------------  | ------ | ---- | --------------------- |
-            | id              | Int    | 是   | 单曲ID                |
-            | track_name      | String | 是   | 单曲名称              |
-            | track_file_path | String | 是   | 单曲文件地址          |
-            | duration        | String | 是   | 时长/秒               |
-            | filesize        | String | 是   | 文件大小/KB           |
-            | album_id        | Int    | 是   | 专辑ID                |
-            | album_name      | String | 是   | 专辑名称              |
-            | album_pic_url   | String | 是   | 专辑图片              |
-            | artists         | Array  | 是   | 艺人列表              |
+            | 字段               | 类型   | 必填 | 描述                           |
+            | ------------------ | ------ | ---- | ------------------------------ |
+            | id                 | Int    | 是   | 单曲ID                         |
+            | track_name         | String | 是   | 单曲名称                       |
+            | track_file_path    | String | 是   | 单曲文件地址                   |
+            | audition_file_path | String | 是   | 单曲试听地址(文件获取速度更快) |
+            | duration           | String | 是   | 时长/秒                        |
+            | filesize           | String | 是   | 文件大小/KB                    |
+            | album_id           | Int    | 是   | 专辑ID                         |
+            | album_name         | String | 是   | 专辑名称                       |
+            | album_pic_url      | String | 是   | 专辑图片                       |
+            | artists            | Array  | 是   | 艺人列表                       |
 
             | 字段            | 类型   | 必填 | 描述                  |
             | --------------  | ------ | ---- | --------------------- |
