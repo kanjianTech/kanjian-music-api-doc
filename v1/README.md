@@ -810,3 +810,13 @@
     ~~~~
     http://library-test.kanjian.com/default/artist.jpg?x-oss-process=image/resize,h_500,w_500
     ~~~~
+
+## 线上访问文件说明
+
+* 线上文件访问需要在http头中添加 Referer 字段才能进行访问，访问规则是 http://<app_key>.openapi.kanjian.com
+
+* 示例
+    ~~~~
+    例如分配的app_key为abc，则通过如下形式才能访问，否则将返回 403 状态码
+    curl -H "Referer: http://abc.openapi.kanjian.com" http://library.kanjian.com/xxx/xxx.jpg
+    ~~~~
