@@ -857,7 +857,7 @@
 
 ## 线上访问文件说明
 
-* 线上文件访问需要在http头中添加 Referer 字段才能进行访问，访问规则是 http://<app_key>.openapi.kanjian.com
+* 线上文件访问需要在http头中添加 Referer 字段才能进行访问，访问规则是 http://<app_key>.open-api.kanjian.com
 
 * 示例
     ~~~~
