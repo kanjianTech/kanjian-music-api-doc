@@ -579,7 +579,6 @@
             | id                 | Int    | 是   | 单曲ID                         |
             | track_name         | String | 是   | 单曲名称                       |
             | track_file_path    | String | 是   | 单曲文件地址                   |
-            | audition_file_path | String | 是   | 单曲试听地址(文件获取速度更快) |
             | duration           | String | 是   | 时长/秒                        |
             | filesize           | String | 是   | 文件大小/KB                    |
             | album_id           | Int    | 是   | 专辑ID                         |
@@ -614,6 +613,51 @@
                 ]
             }
             ~~~~
+
+    * 获取单曲试听地址
+        * URL /v1/track/\<track_id\>/audition
+        * HTTP METHOD GET
+        * 参数 公共参数 + track_id
+        * 返回值
+    
+            | 字段               | 类型   | 必填 | 描述                           |
+            | ------------------ | ------ | ---- | ------------------------------ |
+            | id                 | Int    | 是   | 单曲ID                         |
+            | track_name         | String | 是   | 单曲名称                       |
+            | audition_file_path | String | 是   | 单曲试听地址(文件获取速度更快) |
+            | duration           | String | 是   | 时长/秒                        |
+            | filesize           | String | 是   | 文件大小/KB                    |
+            | album_id           | Int    | 是   | 专辑ID                         |
+            | album_name         | String | 是   | 专辑名称                       |
+            | album_pic_url      | String | 是   | 专辑图片                       |
+            | artists            | Array  | 是   | 艺人列表                       |
+
+            | 字段            | 类型   | 必填 | 描述                  |
+            | --------------  | ------ | ---- | --------------------- |
+            | artist_id       | Int    | 是   | 音乐人ID              |
+            | artist_name     | String | 是   | 音乐人名称            |
+            | artist_pic_url  | String | 是   | 音乐人图片            |
+
+        * 示例
+        
+            ~~~~
+            {
+                "id": 10,
+                "track_name": "how we take",
+                "audition_file_path": "file.kanjian.com/xxx/xxx.wav",
+                "duration": 180,
+                "filesize": 3096,
+                "album_id": 1,
+                "album_name": "way to go",
+                "album_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                "artists": [
+                    {
+                        "artist_id": 1,
+                        "artist_name": "TT",
+                        "artist_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                    }
+                ]
+            }
 
 5. 搜索接口
     * 搜索音乐人
