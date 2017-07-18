@@ -818,5 +818,5 @@
 * 示例
     ~~~~
     例如分配的app_key为abc，则通过如下形式才能访问，否则将返回 403 状态码
-    curl -H "Referer: http://abc.openapi.kanjian.com" http://library.kanjian.com/xxx/xxx.jpg
+    curl -H "Referer: http://abc.open-api.kanjian.com" http://library.kanjian.com/xxx/xxx.jpg
     ~~~~
