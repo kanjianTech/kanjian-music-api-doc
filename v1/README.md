@@ -87,7 +87,7 @@
 
 1. 客户端向看见音乐授权服务器进行身份认证，并要求一个访问令牌。请求示例如下：
     ~~~~
-    curl -d "app_key=[app_key]&timestamp=1453116822556&sig=[签名]" https://test.api.kanjian.com/token
+    curl -d "app_key=[app_key]&timestamp=1453116822556&sig=[签名]" http://test.api.kanjian.com/token
     ~~~~
     
     * 参数说明：
