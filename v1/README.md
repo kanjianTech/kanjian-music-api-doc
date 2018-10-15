@@ -975,6 +975,129 @@
                 "music_url":"http://xxx.kanjian.com/xxx/xxx.mp3"
             }
             ~~~~
+
+7. 批量获取单曲信息(秀堂)
+    * 获取某个日期后的更新单曲列表
+        * URL /v1/xiutang/batch_track/list
+        * 只传after_date则返回after_date到今天，after_date和before_date都有值则返回after_date和before_date之间
+        * 如果没有更新数据，则返回空字符串 ''
+        * HTTP METHOD GET
+        * 参数 公共参数 + 
+
+            | 字段           | 类型   | 必填 | 描述                  |
+            | -------------- | ------ | ---- | --------------------- |
+            | after_date        | String | 是   | 日期(2018-05-29)                |
+            | before_date        | String | 否   | 日期(2018-05-29)                |
+
+        * 返回值
+
+            | 字段           | 类型   | 必填 | 描述                  |
+            | -------------- | ------ | ---- | --------------------- |
+            | 无         | stream-response  | 是   | 单曲id列表(以\n分隔) 
+        
+        * 示例
+            ~~~~
+            2436
+            2437
+            2439
+            ...
+            ~~~~
+    * 批量获取单曲信息
+        * URL /v1/xiutang/batch_track/info
+        * HTTP METHOD POST
+        * 参数 公共参数 + 
+
+            | 字段           | 类型   | 必填 | 描述                  |
+            | -------------- | ------ | ---- | --------------------- |
+            | track_id_list        | Array | 是   | 单曲id列表(按返回id列表切片，每次1000个)                |
+
+        * 返回值
+
+            | 字段           | 类型   | 必填 | 描述                  |
+            | -------------- | ------ | ---- | --------------------- |
+            | count          | Int    | 是   | 当前页面条数          |
+            | tracks         | Array  | 是   | 单曲列表 |
+
+
+            | 字段               | 类型   | 必填 | 描述                           |
+            | ------------------ | ------ | ---- | ------------------------------ |
+            | id                 | Int    | 是   | 单曲ID                         |
+            | track_name         | String | 是   | 单曲名称                       |              
+            | duration           | String | 是   | 时长/秒                        |
+            | album_id           | Int    | 是   | 专辑ID                         |
+            | album_name         | String | 是   | 专辑名称                       |
+            | album_pic_url      | String | 是   | 专辑图片                       |
+            | artists            | Array  | 是   | 艺人列表                       |
+
+            | 字段            | 类型   | 必填 | 描述                  |
+            | --------------  | ------ | ---- | --------------------- |
+            | artist_id       | Int    | 是   | 音乐人ID              |
+            | artist_name     | String | 是   | 音乐人名称            |
+            | artist_pic_url  | String | 是   | 音乐人图片            |
+        
+        * 示例
+            ~~~~
+            {
+                "tracks": [
+                    {
+                        "id": 0,
+                        "track_name": "赵大宝儿",
+                        "duration": 180,
+                        "filesize": 3096,
+                        "album_id": 1,
+                        "album_name": "way to go",
+                        "album_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                        "artists": [
+                            {
+                                "artist_id": 1,
+                                "artist_name": "周杰",
+                                "artist_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                            }
+                        ]
+                    },
+                    {
+                        "id": 1,
+                        "track_name": "北京希望无限文化传媒有限公司",
+                        "duration": 180,
+                        "filesize": 3096,
+                        "album_id": 1,
+                        "album_name": "way to go",
+                        "album_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                        "artists": [
+                            {
+                                "artist_id": 1,
+                                "artist_name": "Jony J",
+                                "artist_pic_url": "http://image.kanjian.com/xxx/xxx.jpg",
+                            }
+                        ]
+                    },
+                    ...
+            }
+            ~~~~
+            
+    * 获取单曲播放链接
+        * URL /v1/xiutang/track/<track_id>/url
+        * HTTP METHOD GET
+        * 参数 公共参数 + 
+
+            | 字段           | 类型   | 必填 | 描述                  |
+            | -------------- | ------ | ---- | --------------------- |
+            | track_id        | Int | 是   | 单曲id                |
+            | user_id        | Int | 是   | 用户id                |
+            | is_vip        | Int | 是   | vip标识                |
+
+        * 返回值
+
+            | 字段           | 类型   | 必填 | 描述                  |
+            | -------------- | ------ | ---- | --------------------- |
+            | music_url          | String    | 是   | 单曲播放链接          |
+        
+        * 示例
+            ~~~~
+            {
+                "music_url":"http://xxx.kanjian.com/xxx/xxx.mp3"
+            }
+            ~~~~
     
 
 ## 图片文件大小切割
